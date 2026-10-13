@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#9b9288" />
+  <title>Zapify Showcase — Art, up close</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="museum-scene">
+    <div class="ambient-shade"></div>
+    <header class="browser-bar" aria-label="Showcase browser toolbar">
+      <button class="browser-icon" aria-label="Toggle sidebar" id="sidebarToggle"><span class="sidebar-glyph">▤</span></button>
+      <button class="browser-icon" aria-label="Go back" id="backBtn">‹</button>
+      <button class="browser-icon" aria-label="Go forward" id="forwardBtn">›</button>
+      <div class="address-bar"><span class="aa">ᴀA</span><span class="lock">♙</span><span>ZapifyShowcase.com</span><span class="mic">♩</span></div>
+      <button class="browser-icon" aria-label="New tab">＋</button>
+      <button class="browser-icon" aria-label="Share showcase" id="shareBtn">↥</button>
+      <button class="browser-icon" aria-label="Show tabs">▣</button>
+    </header>
+
+    <aside class="side-tools" aria-label="Artwork actions">
+      <button id="copyLink" aria-label="Copy artwork link" title="Copy link">↗</button>
+      <button id="favoriteBtn" aria-label="Save artwork" title="Save artwork">♡</button>
+      <button id="artistInfoBtn" aria-label="Artist information" title="Artist information">♙</button>
+    </aside>
+
+    <section class="gallery" aria-label="Featured artworks">
+      <div class="art-stack" id="artStack">
+        <article class="art-card card-back far-left" data-index="3"><img alt="Warm impressionist landscape" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=900&q=85"></article>
+        <article class="art-card card-back left" data-index="1"><img alt="Impressionist garden painting" src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=85"></article>
+        <article class="art-card card-back right" data-index="2"><img alt="Blue-toned fine art painting" src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=900&q=85"></article>
+        <article class="art-card card-back far-right" data-index="4"><img alt="Green and gold landscape painting" src="https://images.unsplash.com/photo-1577083288073-40892c0860a4?auto=format&fit=crop&w=900&q=85"></article>
+        <article class="art-card featured" id="featuredCard">
+          <div class="art-image-wrap"><img id="featuredImage" alt="The Starry Night by Vincent van Gogh" src="https://upload.wikimedia.org/wikipedia/commons/e/ea/The_Starry_Night.JPG"></div>
+          <div class="art-details">
+            <div class="art-title-row"><h1 id="artTitle">The Starry Night</h1><span id="artYear">June 1889</span></div>
+            <p class="quote" id="artQuote">“I look at the stars and with all my being feel that I am a part of one of these stars.”</p>
+            <div class="art-meta"><span id="artMedium">Oil on canvas</span><span id="artDimensions">73.7 × 92.1 cm</span></div>
+          </div>
+          <button class="expand-button" id="expandBtn"><span>⌕</span> Expand</button>
+          <button class="card-arrow card-prev" id="prevBtn" aria-label="Previous artwork">‹</button>
+          <button class="card-arrow card-more" id="moreBtn" aria-label="More artwork options">•••</button>
+        </article>
+      </div>
+    </section>
+
+    <nav class="artist-pill" aria-label="Artist navigation">
+      <button id="artistPrev" aria-label="Previous artist">‹</button>
+      <img id="artistPortrait" alt="Vincent van Gogh portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg/120px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg">
+      <div class="artist-copy"><strong id="artistName">Vincent van Gogh</strong><span id="artistDates">1853 – 1890</span><span id="artistStyle">Dutch · Post-Impressionist</span></div>
+      <button id="artistInfoPill" aria-label="View artist details">⊙</button>
+      <button id="artistNext" aria-label="Next artist">›</button>
+    </nav>
+    <div class="slide-progress" aria-label="Artwork position"><span id="progressDot"></span><div class="progress-track"><span id="progressFill"></span></div></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <div class="modal" id="artModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModal" aria-label="Close expanded artwork">×</button>
+      <img id="modalImage" alt="Expanded artwork" src="">
+      <div class="modal-caption"><span>NOW VIEWING</span><h2 id="modalTitle">The Starry Night</h2><p id="modalDescription">Explore the details, texture, and movement of this celebrated painting.</p></div>
+    </section>
+  </div>
+
+  <div class="info-panel" id="infoPanel" aria-hidden="true">
+    <button id="closeInfo" aria-label="Close information">×</button>
+    <span class="eyebrow">ARTIST SPOTLIGHT</span><h2 id="infoName">Vincent van Gogh</h2><p id="infoText">A Dutch Post-Impressionist painter whose expressive brushwork and vivid color helped reshape modern art.</p>
+    <div class="info-stats"><div><strong id="infoDates">1853–1890</strong><span>Life</span></div><div><strong id="infoMovement">Post-Impressionism</strong><span>Movement</span></div></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
